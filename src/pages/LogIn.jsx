@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import "./LogIn.css"
 import page from '../app/intro/page';
+import { useNavigate } from 'react-router-dom';
 function LogIn() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [loginStatus, setLoginStatus] = useState('');
+    const navigator = useNavigate();
 
-    const handleSubmit = (event) => {
-        event.preventDefault(); 
-        LogInFunction(username, password);
+    const handleSubmit = () => {
+        navigator("/home")
     };
 
     return (
@@ -34,7 +32,7 @@ function LogIn() {
                         className='input-con'
                     />
                     <div className='button-con'>
-                        <button type='submit'>НЭВТРЭХ</button>
+                        <button onClick={handleSubmit}>НЭВТРЭХ</button>
                     </div>
                 </div>  
             </form>

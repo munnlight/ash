@@ -7,14 +7,16 @@
     width: 100%;
     margin: 40px;
     z-index: 1;
-    position: relative;
+    position: absolute;
 }
 
 .my-search-bar input[type="text"] {
     width: calc(100% - 70px);
     padding: 10px 20px;
     height: 8vh;
+    width: 350px;
     border-radius: 50px;
     border: 1px solid #ccc;
     outline: none;
+    background-color: white;
 }
