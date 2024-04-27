@@ -10,25 +10,11 @@ function LogIn() {
         event.preventDefault(); 
         LogInFunction(username, password);
     };
-    const LogInFunction = (username, password) => {
-        if (!username || !password) {
-            setLoginStatus('Please enter both username and password.');
-            return;
-        }
-        const correctUsername = 'user';
-        const correctPassword = 'password';
-
-        if (username === correctUsername && password === correctPassword) {
-            setLoginStatus('Login successful!');
-        } else {
-            setLoginStatus('Login failed! Invalid username or password.');
-        }
-    };
 
     return (
         <div className='main-con'>
             
-            <form onSubmit={handleSubmit}>
+            <form>
                 <div className='form-con' >
                     <div className='add-con'>
                         <h1>НЭВТРЭХ</h1>
@@ -38,18 +24,14 @@ function LogIn() {
                         id='username'
                         name='username'
                         placeholder='нэр'
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
+                        className='input-con'
                     />
                     <input
                         type='password'
                         id='password'
                         name='password'
                         placeholder='нууц үг'
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
+                        className='input-con'
                     />
                     <div className='button-con'>
                         <button type='submit'>НЭВТРЭХ</button>
@@ -57,10 +39,6 @@ function LogIn() {
                 </div>  
             </form>
             
-
-
-            {/* Display the login status */}
-            {loginStatus && <p>{loginStatus}</p>}
         </div>
     );
 }
