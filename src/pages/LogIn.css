@@ -1,0 +1,50 @@
+.main-con {
+    background-color: #b67352;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 312px;
+    height: 450px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: rgba(217, 217, 217, 0.14);
+    box-shadow: 5.347px -5.347px 5.347px 0px rgba(174, 174, 174, 0.49) inset, 10.693px -10.693px 10.693px 0px rgba(255, 255, 255, 0.49) inset, -5.347px 5.347px 5.347px 0px rgba(255, 255, 255, 0.49) inset, -10.693px 10.693px 10.693px 0px rgba(174, 174, 174, 0.49) inset;
+    backdrop-filter: blur(76.45733642578125px);
+}
+input {
+    display: flex;
+    background: #b67352;
+    width: 209px;
+    height: 37px;
+    padding: 4px 151px 4px 13px;
+    margin: 40px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.button-con {
+    display: inline-flex;
+    padding: 8px 53px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 40px;
+    background: #ECB159;
+}
+.add-con {
+    color: #FFF;
+    font-family: "Inria Serif";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
