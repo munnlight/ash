@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import "./page.css"
 
 function MapContainer() {
   const [map, setMap] = useState(null);
@@ -71,19 +72,27 @@ function MapContainer() {
   };
 
   return (
-    <LoadScript
-      googleMapsApiKey={"AIzaSyA6enwWdxZs2LrmyVGTJs8NCMJYt9ChcFo"}
-      onLoad={handleApiLoad}
-    >
-      <GoogleMap
-        mapContainerStyle={{ width: "100vw", height: "100vh" }}
-        zoom={10}
-        center={{ lat: 55.53, lng: 9.4 }}
-        onLoad={handleLoad}
-      >
-        {/* Child components, such as markers, can go here */}
-      </GoogleMap>
-    </LoadScript>
+    <>
+    <div style={{height: "100vh", width: "100%"}}>
+        <div className='my-search-bar'>
+          <input type="text" placeholder='Search' />
+        </div>
+        <div className="google-map-container">
+          <LoadScript
+            googleMapsApiKey={"AIzaSyDCtjmFyHPQ5GfjqaREiqv-Y_6wc2w0eLs"}
+            onLoad={handleApiLoad}
+          >
+            <GoogleMap
+              mapContainerStyle={{ width: "100vw", height: "100vh" }}
+              zoom={10}
+              center={{ lat: 55.53, lng: 9.4 }}
+              onLoad={handleLoad}
+            >
+            </GoogleMap>
+          </LoadScript>
+        </div>
+    </div>
+    </>
   );
 }
 
