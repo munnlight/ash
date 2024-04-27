@@ -9,16 +9,18 @@
     justify-content: center;
     flex-direction: column;
     justify-content: space-between;
+    padding-top: 60px ;
 }
 .takePhoto {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    width: 90vw;
+    width: 80vw;
     height: 40vh;
     border-radius: 50px;
     background: #fff;
+    padding-top: 15vh;
 }
 .title-con {
     color: #FFF;
@@ -31,8 +33,26 @@
 }
 .submit-con {
     display: flex;
-    width: 232px;
+    width: 90vh;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 150px;
+}
+.submit-button {
+    background-color: #4CAF50; 
+    color: white;
+    width: 20vh; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    margin-bottom: 10vh;
+}
+.info-text {
+    width: 40vh;
+    margin-top: 10px;
+    font-size: 14px; 
+    color: #000000; 
+    padding-left: 3vh;
 }
