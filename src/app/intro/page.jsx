@@ -1,27 +1,11 @@
-// "use client";
-// import { useState } from "react";
-// import { APIProvider, Map, AdvancedMarker, Pin, InfoWindow } from "@vis.gl/react-google-maps";
-
-// export default function Intro() {
-//   const position = { lat: 29, lng: 28 };
-//   const apiKey = import.meta.env.NEXT_PUBLIC_KEY_API;
-
-//   return (
-//     <APIProvider key={apiKey}>
-//       <div className="h-full w-full">
-//         <Map zoom={9} center={position}></Map>
-//       </div>
-//     </APIProvider>
-//   );
-// }
-
 import React from "react";
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, StreetViewService } from "@react-google-maps/api";
+import "./page.css";
 
 function MapContainer() {
   const containerStyle = {
-    width: "100vw",
-    height: "100vh",
+    width: "430px",
+    height: "932px",
   };
 
   const loca = {
@@ -29,12 +13,29 @@ function MapContainer() {
     lng: 106.924,
   };
 
+  const mapOptions = {
+    mapTypeControl: false, // Enable MapTypeControl
+    linksControl: false,
+    panControl: false,
+    addressControl: false,
+    enableCloseButton: false,
+    zoomControl: false,
+    fullscreenControl: false,
+    streetViewControl: false,
+    // mapTypeControlOptions: {
+    //   style: window.google.maps.MapTypeControlStyle.HORIZONTAL_BAR, // Set style of the MapTypeControl
+    //   position: window.google.maps.ControlPosition.TOP_RIGHT, // Set position of the MapTypeControl
+    // },
+  };
+
   return (
-    <LoadScript googleMapsApiKey={"AIzaSyDCtjmFyHPQ5GfjqaREiqv-Y_6wc2w0eLs"}>
-      <GoogleMap mapContainerStyle={containerStyle} center={loca} zoom={20}>
-        {/* Child components, such as markers, can go here */}
-      </GoogleMap>
-    </LoadScript>
+    <div className="cont">
+      <LoadScript googleMapsApiKey={"AIzaSyDCtjmFyHPQ5GfjqaREiqv-Y_6wc2w0eLs"}>
+        <GoogleMap mapContainerStyle={containerStyle} center={loca} zoom={20} options={mapOptions}>
+          {/* Child components, such as markers, can go here */}
+        </GoogleMap>
+      </LoadScript>
+    </div>
   );
 }
 
