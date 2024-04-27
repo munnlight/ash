@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import MapContainer from '../app/intro/page'
+import LogIn from '../pages/LogIn'
 import "./HomePage.css"
 import img1 from "../assets/icon.png"
 
@@ -24,7 +24,7 @@ export const HomePage = () => {
                 <img src={img1} alt="" className='icon1' />
             </div>
         </div>
-        <MapContainer />
+        <LogIn />
     </div>
   )
 }
