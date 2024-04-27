@@ -1,9 +1,6 @@
 import React, {useState} from 'react'
 import "./BottomNav.css"
-import { useNavigate } from 'react-router-dom';
 export const BottomNav = ({buttonText, icon, onClick}) => {
-
-   
 
   return (
     <div className='bottom-nav'>
