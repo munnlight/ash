@@ -1,16 +1,58 @@
-import React from "react";
-import { GoogleMap, LoadScript, StreetViewService } from "@react-google-maps/api";
-import "./page.css";
+import React, { useEffect, useState } from "react";
+import { GoogleMap, LoadScript } from "@react-google-maps/api";
 
 function MapContainer() {
-  const containerStyle = {
-    width: "430px",
-    height: "932px",
+  const [map, setMap] = useState(null);
+  const [markers, setMarkers] = useState([]);
+  const [apiLoaded, setApiLoaded] = useState(false);
+
+  useEffect(() => {
+    if (map && apiLoaded) {
+      const bounds = new window.google.maps.LatLngBounds();
+      const origin1 = { lat: 49.4585, lng: 105.9245 }; // Darkhan
+      const origin2 = { lat: 47.8864, lng: 106.9057 }; // Ulaanbaatar
+
+      // Draw markers for origin points
+      const originMarker1 = new window.google.maps.Marker({
+        position: origin1,
+        label: "O1",
+        map,
+      });
+      const originMarker2 = new window.google.maps.Marker({
+        position: origin2,
+        label: "O2",
+        map,
+      });
+
+      // Draw line between origin points
+      const distanceLine = new window.google.maps.Polyline({
+        path: [origin1, origin2],
+        strokeColor: "#FF0000",
+        strokeOpacity: 1.0,
+        strokeWeight: 2,
+        map,
+      });
+
+      // Extend bounds to include markers and line
+      bounds.extend(originMarker1.getPosition());
+      bounds.extend(originMarker2.getPosition());
+      bounds.extend(distanceLine.getPath().getAt(0));
+      bounds.extend(distanceLine.getPath().getAt(1));
+
+      // Fit map to bounds
+      map.fitBounds(bounds);
+
+      // Save markers to state
+      setMarkers([originMarker1, originMarker2]);
+    }
+  }, [map, apiLoaded]);
+
+  const handleLoad = (map) => {
+    setMap(map);
   };
 
-  const loca = {
-    lat: 47.922,
-    lng: 106.924,
+  const handleApiLoad = () => {
+    setApiLoaded(true);
   };
 
   const mapOptions = {
@@ -29,14 +71,21 @@ function MapContainer() {
   };
 
   return (
-    <div className="cont">
-      <LoadScript googleMapsApiKey={"AIzaSyDCtjmFyHPQ5GfjqaREiqv-Y_6wc2w0eLs"}>
-        <GoogleMap mapContainerStyle={containerStyle} center={loca} zoom={20} options={mapOptions}>
-          {/* Child components, such as markers, can go here */}
-        </GoogleMap>
-      </LoadScript>
-    </div>
+    <LoadScript
+      googleMapsApiKey={"AIzaSyA6enwWdxZs2LrmyVGTJs8NCMJYt9ChcFo"}
+      onLoad={handleApiLoad}
+    >
+      <GoogleMap
+        mapContainerStyle={{ width: "100vw", height: "100vh" }}
+        zoom={10}
+        center={{ lat: 55.53, lng: 9.4 }}
+        onLoad={handleLoad}
+      >
+        {/* Child components, such as markers, can go here */}
+      </GoogleMap>
+    </LoadScript>
   );
 }
 
 export default MapContainer;
+
