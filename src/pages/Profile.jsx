@@ -53,9 +53,10 @@ export const Profile = () => {
               </div>
             </div>
           </div>
+          <div className="pb-2 text-slate-800">цааш үзэх...</div>
         </div>
       </div>
-      <RealHome />
+      {/* <RealHome /> */}
     </div>
   );
 };
