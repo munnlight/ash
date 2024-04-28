@@ -4,7 +4,7 @@ export const BottomNav = ({buttonText, icon, onClick}) => {
 
   return (
     <div className='bottom-nav'>
-             <button className="" onClick={onClick} >{icon}</button>
+        <button className="" onClick={onClick} >{icon}</button>
         <p className='text-center'>{buttonText}</p>
     </div>
   )
