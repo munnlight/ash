@@ -6,7 +6,7 @@ function LogIn() {
     const navigator = useNavigate();
 
     const handleSubmit = () => {
-        navigator("/home");
+        navigator("/home")
     };
 
     return (
@@ -22,18 +22,21 @@ function LogIn() {
                         id='username'
                         name='username'
                         placeholder='нэр'
+                        className='input-con'
                     />
                     <input
                         type='password'
                         id='password'
                         name='password'
                         placeholder='нууц үг'
+                        className='input-con'
                     />
                     <div className='button-con'>
                         <button onClick={handleSubmit}>НЭВТРЭХ</button>
                     </div>
                 </div>  
             </form>
+            
         </div>
     );
 }
