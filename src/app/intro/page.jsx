@@ -14,7 +14,7 @@ function MapContainer() {
     "#FF0000", // red
     "#808080", // grey
     "#FF0000", // red
-    "#808080"  // grey
+    "#808080", // grey
   ];
   const reasons = [
     "Хурд хэтрүүлэлт",
@@ -23,8 +23,7 @@ function MapContainer() {
     "Хурд хэтрүүлэлт",
     "Хариуцлагагүй байдал",
     "Замын эвдрэл",
-  ]
-
+  ];
 
   useEffect(() => {
     if (map && apiLoaded) {
@@ -89,7 +88,7 @@ function MapContainer() {
           key="distance-line"
           path={[
             { lat: 49.4585, lng: 105.9245 }, // Darkhan
-            { lat: 47.8864, lng: 106.9057 }  // Ulaanbaatar
+            { lat: 47.8864, lng: 106.9057 }, // Ulaanbaatar
           ]}
           options={{
             strokeColor: "#0000FF",
@@ -113,21 +112,30 @@ function MapContainer() {
     setApiLoaded(true);
   };
 
+  const mapOptions = {
+    mapTypeControl: false,
+    linksControl: false,
+    panControl: false,
+    addressControl: false,
+    enableCloseButton: false,
+    zoomControl: false,
+    fullscreenControl: false,
+    streetViewControl: false,
+  };
+
   return (
     <div style={{ height: "100vh", width: "100%" }}>
       <div className="my-search-bar">
         <input type="text" placeholder="Search" />
       </div>
       <div className="google-map-container">
-        <LoadScript
-          googleMapsApiKey={"AIzaSyDCtjmFyHPQ5GfjqaREiqv-Y_6wc2w0eLs"}
-          onLoad={handleApiLoad}
-        >
+        <LoadScript googleMapsApiKey={"AIzaSyDCtjmFyHPQ5GfjqaREiqv-Y_6wc2w0eLs"} onLoad={handleApiLoad}>
           <GoogleMap
             mapContainerStyle={{ width: "100vw", height: "100vh" }}
             zoom={8}
             center={{ lat: 48.6, lng: 106.8 }}
             onLoad={handleLoad}
+            options={mapOptions}
           >
             {markers}
             {circles}
