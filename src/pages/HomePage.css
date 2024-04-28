@@ -1,35 +1,32 @@
 .top-div {
-    transition: background-color 2s ease;
-    background-color: #252525;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    
+  transition: background-color 2s ease;
+  background-color: #252525;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
 }
 .end-par {
-    color: white;
-    font-weight: 600;
-    font-size: 1.6rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.6rem;
 }
 .bottom-div {
-    position: fixed;
-    bottom: 0;
-    top: 83%;
-    left: -5%;
-    width: 100%;
-    z-index: 1000;
-    height: 10vh;
-    border-top-right-radius: 50px;
-    border-top-left-radius: 50px;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 114, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  height: 10vh;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 114, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 .last-con {
-    position: absolute;
-    top: 0;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
