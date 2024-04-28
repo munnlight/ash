@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.bottom-div {
+    background-color: #ECB159;
+}

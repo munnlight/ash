@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/add" element={<AddPlace />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-    </Router>
+    </Router> 
   );
 };
 

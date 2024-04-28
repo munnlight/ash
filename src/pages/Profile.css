@@ -2,3 +2,22 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+.pro-img {
+  border-radius: 50%;
+  height: 110px;
+  width: 140px;
+}
+.pro-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.pro-p {
+  font-weight: bolder;
+  font-size: 35px;
+  color: white;
+}
+.pro-user {
+  margin-left: 20px;
+}
